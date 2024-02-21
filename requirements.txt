@@ -1,0 +1,6 @@
+pydantic~=2.6.1
+mysql~=8.1
+SQLAlchemy~=2.0.27
+python-dotenv~=1.0.1
+sanic~=23.12.1
+pytest~=8.0.1

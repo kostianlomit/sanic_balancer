@@ -1,0 +1,33 @@
+version: "3.10"
+services:
+
+  db:
+    image: mysql:8
+    container_name: db_app
+    ports:
+      - 5432:5432
+    env_file:
+      - .env-non-dev
+
+
+  redis:
+    image: redis:7
+    container_name: redis_app
+    ports:
+      - 5370:5370
+    env_file:
+      - .env-non-dev
+
+  app:
+    build:
+      context: .
+    env_file:
+      - .env-non-dev
+    container_name: sanic_balancer
+    image: sanic_balancer
+    command: [ "/sanic_balancer/docker/wait-for-it.sh", "db:5432", "--","/secret_marks/docker/app.sh" ]
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+      - redis
