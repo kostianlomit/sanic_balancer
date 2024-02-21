@@ -40,12 +40,6 @@ JSON API сервис, который позволяет обрабатыват�
    DB_USER=mysql #имя пользователя продакшн-базы 
    DB_PASS=mysql #пароль пользователя продакшн-базы 
    
-   DB_HOST_TEST=db #хост тестовой базы 
-   DB_PORT_TEST=5432 #порт тестовой базы 
-   DB_NAME_TEST=mysql #название тестовой базы
-   DB_USER_TEST=mysql #имя пользователя тестовой базы
-   DB_PASS_TEST=mysql #пароль пользователя тестовой базы
-   
    Mysql_DB=mysql 
    Mysql_USER=mysql 
    Mysql_PASSWORD=mysql 
@@ -104,7 +98,7 @@ d.m3u8'"}'
 ## Тестирование
 Выполните команду 
 ```python3
-sudo docker exec sanic_balancer pytest tests/test_app.py
+sudo docker exec sanic_balancer pytest test/conftest.py
 ```
 
 unit
