@@ -8,13 +8,6 @@ from api.balanser.models import OriginServer
 from api.config import CDN_HOST
 
 
-# Для теста балансировки
-fake_uzer_db = {
-    1 : {"server_s1": "http://balancer-domain/?video=http://s1.origin-cluster/video/1488/xcg2djHckad.m3u8"},
-    2 : {"server_s2": "http://balancer-domain/?video=http://s2.origin-cluster/video/1488/xcg2djHckad.m3u8"},
-    3 : {"server_s3": "http://balancer-domain/?video=http://s3.origin-cluster/video/1488/xcg2djHckad.m3u8",
-    }
-}
 
 app = Sanic("sanic_balancer")
 
